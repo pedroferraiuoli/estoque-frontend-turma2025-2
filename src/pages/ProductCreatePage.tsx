@@ -59,7 +59,6 @@ export default function ProductCreatePage() {
               value={barcode}
               onChange={(e) => setBarcode(e.target.value)}
               placeholder="Ex: 1234567899"
-              required
             />
           </div>
 
@@ -71,7 +70,6 @@ export default function ProductCreatePage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Ex: Guaravita"
-              required
             />
           </div>
 
@@ -84,7 +82,6 @@ export default function ProductCreatePage() {
               value={orderReferenceDays}
               onChange={(e) => setOrderReferenceDays(e.target.value)}
               placeholder="Ex: 30"
-              required
             />
           </div>
 

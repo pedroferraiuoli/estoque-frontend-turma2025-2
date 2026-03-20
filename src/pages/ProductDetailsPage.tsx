@@ -86,19 +86,19 @@ export default function ProductDetailsPage() {
           <div className="detail-list">
             <div className="detail-item">
               <span className="detail-label">Código de Barras</span>
-              <strong>{product.barcode}</strong>
+              <strong><div data-testid="product-barcode">{product.barcode}</div></strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Nome</span>
-              <strong>{product.name}</strong>
+              <strong><div data-testid="product-name">{product.name}</div></strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Quantidade em Estoque</span>
-              <strong>{product.quantityInStock}</strong>
+              <strong><div data-testid="product-quantity">{product.quantityInStock}</div></strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Dias de Referência</span>
-              <strong>{product.orderReferenceDays}</strong>
+              <strong><div data-testid="product-reference-days">{product.orderReferenceDays}</div></strong>
             </div>
           </div>
         </div>
