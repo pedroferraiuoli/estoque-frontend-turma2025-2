@@ -29,7 +29,6 @@ test('Deve retornar erro ao criar pedido com quantidade negativa', async ({ page
   await page.waitForTimeout(500);
   await page.getByRole('link', { name: 'Novo Pedido' }).click();
   await page.waitForTimeout(500);
-
   await page.getByRole('textbox', { name: 'Código de Barras do Produto' }).fill('1234567890');
   await page.waitForTimeout(500);
   await page.getByRole('spinbutton', { name: 'Quantidade' }).fill('-10');
