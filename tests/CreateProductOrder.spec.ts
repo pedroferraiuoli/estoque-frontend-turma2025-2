@@ -38,5 +38,5 @@ test('Deve retornar erro ao criar pedido com quantidade negativa', async ({ page
   await page.getByRole('button', { name: 'Criar Pedido' }).click();
   await page.waitForTimeout(500);
   await expect(page).toHaveURL('/orders/new');
-  await expect(page.getByText('Quantity must be positive')).toBeVisible();
+  await expect(page.locator('.toast.toast-error')).toContainText('Quantity must be positive');
 });

@@ -46,7 +46,7 @@ export default function ProductOrderCreatePage() {
 
       <div className="card form-card">
         <h2>Dados do Pedido</h2>
-        <form onSubmit={handleCreate} className="form create-product-form">
+        <form onSubmit={handleCreate} className="form create-product-form" noValidate>
           <div className="field">
             <label htmlFor="barcode">Código de Barras do Produto</label>
             <input
@@ -63,7 +63,6 @@ export default function ProductOrderCreatePage() {
             <input
               id="quantity"
               type="number"
-              min="1"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               placeholder="Ex: 10"
