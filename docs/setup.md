@@ -33,3 +33,16 @@ npx playwright test --ui
 # Ver relatório dos testes
 npx playwright show-report
 ```
+
+
+## Testes com Cucumber
+
+```bash
+# Rodar os testes
+npx cucumber-js --config cucumber.mjs --import features/steps/**/*.ts --import features/support/**/*.ts
+```
+
+```bash
+# Rodar os testes via scripts no package.json
+npm run cucumber
+```
