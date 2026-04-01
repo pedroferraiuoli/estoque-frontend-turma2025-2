@@ -5,27 +5,40 @@ import { expect } from '@playwright/test';
 const barcode: number = Date.now();
 let uuid: string = '';
 
+Given('que tenho um produto valido cadastrado', async function (this: CustomWorld) {
+  await this.page!.goto('/');
+  await this.page!.getByRole('link', { name: 'Produtos', exact: true }).click();
+  await this.page!.getByRole('link', { name: 'Novo Produto' }).click();
+  await this.page!.waitForTimeout(500);
+  await this.page!.getByRole('textbox', { name: 'Código de Barras' }).fill(barcode.toString());
+  await this.page!.getByRole('textbox', { name: 'Nome' }).fill('Guaraná' + barcode.toString());
+  await this.page!.getByRole('spinbutton', { name: 'Dias de Referência' }).fill('30');
+  await this.page!.waitForTimeout(500);
+  await this.page!.getByRole('button', { name: 'Criar Produto' }).click();
+  await this.page!.waitForTimeout(500); 
+});
+
 Given('que estou na tela de criacao de pedido', async function (this: CustomWorld) {
   await this.page!.goto('/');
-  await this.page!.waitForTimeout(2000);
+  await this.page!.waitForTimeout(500);
   await this.page!.getByRole('link', { name: 'Pedidos', exact: true }).click();
-  await this.page!.waitForTimeout(2000);
+  await this.page!.waitForTimeout(500);
   await this.page!.getByRole('link', { name: 'Novo Pedido' }).click();
-  await this.page!.waitForTimeout(2000);
+  await this.page!.waitForTimeout(500);
 })
 
 When('preencho os dados do pedido', async function (this: CustomWorld) {
   await this.page!.getByRole('textbox', { name: 'Código de Barras do Produto' }).fill(barcode.toString());
-  await this.page!.waitForTimeout(1000);
+  await this.page!.waitForTimeout(500);
   await this.page!.getByRole('spinbutton', { name: 'Quantidade' }).fill("10");
-  await this.page!.waitForTimeout(1000);
+  await this.page!.waitForTimeout(500);
   await this.page!.locator('#orderDate').fill('2025-07-10T10:00');
-  await this.page!.waitForTimeout(1000);
+  await this.page!.waitForTimeout(500);
 })
 
 When('solicito a criacao do pedido', async function (this: CustomWorld) {
   await this.page!.getByRole('button', { name: 'Criar Pedido' }).click();
-  await this.page!.waitForTimeout(1000);
+  await this.page!.waitForTimeout(500);
 })
 
 Then('devo ver os dados do pedido cadastrado com status = opened', async function (this: CustomWorld) {

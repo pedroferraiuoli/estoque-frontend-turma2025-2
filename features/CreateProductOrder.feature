@@ -1,7 +1,8 @@
 Feature: Cadastro de pedido de produto
 
 Scenario: Cadastro com sucesso
-  Given que estou na tela de criacao de pedido
+  Given que tenho um produto valido cadastrado
+  And que estou na tela de criacao de pedido
   When preencho os dados do pedido
   And solicito a criacao do pedido
   Then devo ver os dados do pedido cadastrado com status = opened
