@@ -54,28 +54,28 @@ export default function ProductOrderDetailsPage() {
           <div className="detail-list">
             <div className="detail-item">
               <span className="detail-label">UUID</span>
-              <strong>{order.uuid}</strong>
+              <strong data-testid="order-uuid">{order.uuid}</strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Produto</span>
-              <strong>{order.product}</strong>
+              <strong data-testid="order-product">{order.product}</strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Código de Barras</span>
-              <strong>{order.productBarcode}</strong>
+              <strong data-testid="order-barcode">{order.productBarcode}</strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Quantidade</span>
-              <strong>{order.quantity}</strong>
+              <strong data-testid="order-quantity">{order.quantity}</strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Data do Pedido</span>
-              <strong>{new Date(order.orderDate).toLocaleString("pt-BR")}</strong>
+              <strong data-testid="order-date">{new Date(order.orderDate).toLocaleString("pt-BR")}</strong>
             </div>
             <div className="detail-item">
               <span className="detail-label">Status</span>
               <strong>
-                <span className={`badge ${order.status === "opened" ? "badge-red" : "badge-green"}`}>
+                <span data-testid="order-status" className={`badge ${order.status === "opened" ? "badge-red" : "badge-green"}`}>
                   {order.status}
                 </span>
               </strong>
