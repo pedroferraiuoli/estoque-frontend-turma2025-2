@@ -11,6 +11,8 @@ import InputsPage from "./pages/InputsPage";
 import ProductInputCreatePage from "./pages/ProductInputCreatePage";
 import ProductInputDetailsPage from "./pages/ProductInputDetailsPage";
 import OutputsPage from "./pages/OutputsPage";
+import ProductOutputCreatePage from "./pages/ProductOutputCreatePage";
+import ProductOutputDetailsPage from "./pages/ProductOutputDetailsPage";
 
 export default function App() {
   return (
@@ -30,6 +32,8 @@ export default function App() {
             <Route path="/inputs/new" element={<ProductInputCreatePage />} />
             <Route path="/inputs/:productInputId" element={<ProductInputDetailsPage />} />
             <Route path="/outputs" element={<OutputsPage />} />
+            <Route path="/outputs/new" element={<ProductOutputCreatePage />} />
+            <Route path="/outputs/:productOutputId" element={<ProductOutputDetailsPage />} />
           </Routes>
         </main>
       </div>

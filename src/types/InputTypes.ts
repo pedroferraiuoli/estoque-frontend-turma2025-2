@@ -5,6 +5,13 @@ export interface ProductInput {
   inputDate: string;
 }
 
+export interface ProductOutput {
+  uuid: string;
+  productOrderId: string;
+  quantity: number;
+  outputDate: string;
+}
+
 export interface CreateProductInputRequest {
   productOrderId: string;
   quantity: number;
